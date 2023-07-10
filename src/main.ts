@@ -1,16 +1,12 @@
 import './style.css'
-import getData from './utils/getData'
-import apiKey from './apiKey/apiKey';
-import { Bengal } from './interface/Bengal';
+import renderCArd from './utils/renderCard';
+import addBlock from './utils/addBlock';
+import BtnRefresh from './components/BtnRefresh';
+import refreshImg from './utils/refreshImg';
 
-console.log(typeof apiKey);
-
-
-getData (apiKey).then(data =>{
-  console.log(data<Bengal>);
-  
-})
-.catch((error:Error) => {
-  console.log(error);
-  throw new Error('fallo al obtener datos')
-})
+//Agrega al DOM por primera vez la card
+renderCArd();
+//agrega el btn de refrescar imagen
+addBlock('#app', BtnRefresh, 'beforeend');
+//agrega el evento de refrescar imagen
+refreshImg('#btnRefresh');
