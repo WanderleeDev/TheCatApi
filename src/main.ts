@@ -10,3 +10,6 @@ renderCArd();
 addBlock('#app', BtnRefresh, 'beforeend');
 //agrega el evento de refrescar imagen
 refreshImg('#btnRefresh');
+
+const cd= document.querySelector('#card')
+console.log(cd);

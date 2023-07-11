@@ -6,8 +6,10 @@ import CartImg from '../components/CardImg';
 
 function renderCArd():void {
   getData (apiKey).then(data =>{
-    const { breeds, url }= data[0];
-    const obj = { img: url, data: breeds[0] };
+    console.log(data);
+    
+    const { breeds , url }= data[0];
+    const obj = { img: url, data: breeds[0] as any };
     addBlock('#app',CartImg(obj),'afterbegin');
   })
   .catch((error:Error): void => {

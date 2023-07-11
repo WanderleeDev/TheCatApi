@@ -1,8 +1,8 @@
 import renderCArd from "./renderCard";
 
 function refreshImg(element: string): void {
-  document.querySelector<HTMLButtonElement>(element)
-  ?.addEventListener('click', ():void => renderCArd());
+  const tag =document.querySelector<HTMLButtonElement>(element);
+  tag?.addEventListener('click', ():void => renderCArd());
 }
 
 export default refreshImg;
