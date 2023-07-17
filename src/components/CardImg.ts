@@ -1,5 +1,3 @@
-
-
 const CartImg = ({...params})=> {
   const {img, data} = params;
   const {name, description, origin} =data;

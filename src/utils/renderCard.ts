@@ -6,11 +6,12 @@ import CartImg from '../components/CardImg';
 
 function renderCArd():void {
   getData (apiKey).then(data =>{
-    console.log(data);
+    const dat = data.map((d)=>{
+      const { breeds, url} = d;
+      return(`${CartImg({img: url, data:breeds[0]})}`)
+    }).join('')
     
-    const { breeds , url }= data[0];
-    const obj = { img: url, data: breeds[0] as any };
-    addBlock('#app',CartImg(obj),'afterbegin');
+    addBlock('#app',dat,'afterbegin');
   })
   .catch((error:Error): void => {
     console.log(error);
